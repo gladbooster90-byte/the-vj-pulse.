@@ -1,0 +1,6 @@
+{
+  "name": "THE VJ PULSE - Uganda Translated Movies & Series",
+  "description": "Stream unlimited movies and series translated into Luganda by VJ Junior, VJ Jingo, VJ Ice P, VJ Emmy, VJ Mark, VJ Kevo and all of Uganda's top VJs. Instant HD streaming & downloads.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

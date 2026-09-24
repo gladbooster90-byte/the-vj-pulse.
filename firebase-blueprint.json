@@ -1,0 +1,78 @@
+{
+  "entities": {
+    "users": {
+      "title": "User",
+      "description": "User profile with authentication and subscription tier",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "role": { "type": "string", "enum": ["viewer", "admin"] },
+        "activePlan": { "type": "string" },
+        "subscriptionExpiresAt": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "email"]
+    },
+    "movies": {
+      "title": "Movie",
+      "description": "Movies and series catalog translated by VJs",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "vj": { "type": "string" },
+        "genre": { "type": "string" },
+        "type": { "type": "string", "enum": ["movie", "series"] },
+        "year": { "type": "number" },
+        "duration": { "type": "string" },
+        "quality": { "type": "string" },
+        "rating": { "type": "string" },
+        "synopsis": { "type": "string" },
+        "posterUrl": { "type": "string" },
+        "videoUrl": { "type": "string" },
+        "featured": { "type": "boolean" },
+        "trending": { "type": "boolean" },
+        "latest": { "type": "boolean" },
+        "newlyAdded": { "type": "boolean" }
+      },
+      "required": ["title", "vj", "genre", "videoUrl"]
+    },
+    "subscriptionRequests": {
+      "title": "SubscriptionRequest",
+      "description": "Mobile money payment subscription verification requests",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "fullName": { "type": "string" },
+        "phoneNumber": { "type": "string" },
+        "network": { "type": "string", "enum": ["Airtel Money", "MTN Mobile Money"] },
+        "planId": { "type": "string" },
+        "planName": { "type": "string" },
+        "amountUgx": { "type": "number" },
+        "transactionId": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "active", "expired"] },
+        "createdAt": { "type": "string" },
+        "expiresAt": { "type": "string" }
+      },
+      "required": ["phoneNumber", "network", "planId", "transactionId", "status"]
+    },
+    "broadcasts": {
+      "title": "Broadcast",
+      "description": "Scheduled Live TV movie broadcast entries",
+      "type": "object",
+      "properties": {
+        "movieId": { "type": "string" },
+        "title": { "type": "string" },
+        "vj": { "type": "string" },
+        "genre": { "type": "string" },
+        "startTime": { "type": "string" },
+        "endTime": { "type": "string" },
+        "videoUrl": { "type": "string" },
+        "posterUrl": { "type": "string" }
+      },
+      "required": ["title", "vj", "startTime", "endTime"]
+    }
+  }
+}
